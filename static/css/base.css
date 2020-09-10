@@ -25,9 +25,7 @@ body{
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
+
 
 .main-logo-link {
     width: fit-content;
@@ -87,5 +85,13 @@ body{
 }
 
 i {
-    color: #3CB371
+    color: #3CB371;
 }
+
+.delivery-logo-color{
+    color: #3CB371;
+}
+.navbar  {
+    background-color: #3CB371;
+}
+
