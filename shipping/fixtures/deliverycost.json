@@ -1,0 +1,35 @@
+[
+  {
+    "pk": 1,
+    "model": "shipping.deliverycost",
+    "fields": {
+      "country":1,
+      "sku": "dw4007301",
+      "name": "",
+      "description": "dsfdsf",
+      "price": 11.99
+    }
+  },
+    {
+    "pk": 2,
+    "model": "shipping.deliverycost",
+    "fields": {
+      "country":2,
+      "sku": "dw4007303331",
+      "name": "",
+      "description": "dsfdsf",
+      "price": 11.99
+    }
+  },
+    {
+    "pk": 3,
+    "model": "shipping.deliverycost",
+    "fields": {
+      "country":3,
+      "sku": "dw4007222301",
+      "name": "",
+      "description": "dsfdsf",
+      "price": 11.99
+    }
+  }
+]

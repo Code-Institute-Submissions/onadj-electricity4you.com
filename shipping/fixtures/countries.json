@@ -1,0 +1,26 @@
+[
+  {
+    "pk": 1,
+    "model": "shipping.country",
+    "fields": {
+      "name": "ireland",
+      "friendly_name": "Ireland"
+    }
+  },
+   {
+    "pk": 2,
+    "model": "shipping.country",
+    "fields": {
+      "name": "croatia",
+      "friendly_name": "Croatia"
+    }
+  },
+   {
+    "pk": 3,
+    "model": "shipping.country",
+    "fields": {
+      "name": "england",
+      "friendly_name": "England"
+    }
+  }
+]
