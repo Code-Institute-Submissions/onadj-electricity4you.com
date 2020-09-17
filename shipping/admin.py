@@ -12,6 +12,7 @@ class DeliverycostAdmin(admin.ModelAdmin):
         'price',
     )
 
+ordering = ('sku', )
 
 class CountryAdmin(admin.ModelAdmin):
     list_display = (
