@@ -1,15 +1,15 @@
 from django.shortcuts import render
-from .models import Deliverycost
+from .models import Deliverytime
 
 # Create your views here.
 
-def all_deliverycost(request):
-    """ A view to show all delivery cost """
+def all_deliverytime(request):
+    """ A view to show all delivery time """
 
-    deliverycost = Deliverycost.objects.all()
+    deliverytime = Deliverytime.objects.all()
 
     context = {
-        'deliverycost' : deliverycost, 
+        'deliverytimes' : deliverytime, 
     }
 
     return render(request, 'shipping/shipping.html', context)

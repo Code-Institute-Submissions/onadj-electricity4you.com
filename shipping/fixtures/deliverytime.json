@@ -1,0 +1,32 @@
+[
+  {
+    "pk": 1,
+    "model": "shipping.deliverytime",
+    "fields": {
+      "country":1,
+      "name": "",
+      "description": "dsfdsf"
+      
+    }
+  },
+    {
+    "pk": 2,
+    "model": "shipping.deliverytime",
+    "fields": {
+      "country":2,
+      "name": "",
+      "description": "dsfdsf"
+      
+    }
+  },
+    {
+    "pk": 3,
+    "model": "shipping.deliverytime",
+    "fields": {
+      "country":3,
+      "name": "",
+      "description": "dsfdsf"
+      
+    }
+  }
+]
