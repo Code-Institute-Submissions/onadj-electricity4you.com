@@ -1,0 +1,1 @@
+Electricity 4 You Confirmation for Order Number {{ order.order_number }}
