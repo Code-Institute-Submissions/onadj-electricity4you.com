@@ -19,20 +19,22 @@
     <div class="col text-center mt-3">
       <div class="blog-container offset-1">
         {% for post in object_list %}
-
+     
         <div class="col-12">
           <div class="mb-0">
             <a href="{% url 'article-detail' post.pk %}"
               ><h2>{{ post.title }} {{ post.author.first_name }}</h2></a
             >
-            <div class="mb-1">{{ post.author.last_name }} - <a href="{% url 'update_post' post.pk %}">Edit</a></div>
+            <div class="mb-1">{{ post.author.last_name }}    <a href="{% url 'update_post' post.pk %}">Edit</a></div>
 
 <a href="{% url 'delete_post' post.pk %}">Delete</a>
 
-            <div class="mb-1">By: {{ post.author.email }}</div>
+            <div class="mb-1">By: {{ post.author.email }} - {{ post.post_date }} -</div>
+            <br>
             <div class="mb-1">{{ post.body }}</div>
           </div>
         </div>
+       
         <hr class="w-50 mb-1" />
         {% endfor %}
       </div>
