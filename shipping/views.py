@@ -9,7 +9,7 @@ def all_deliverytime(request):
     deliverytime = Deliverytime.objects.all()
 
     context = {
-        'deliverytimes' : deliverytime, 
+        'deliverytimes': deliverytime, 
     }
 
     return render(request, 'shipping/shipping.html', context)
