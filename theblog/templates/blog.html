@@ -1,14 +1,39 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
 
+<div class="overlay"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center mt-3">
+      <h2 class="logo-font text-center">Blog</h2>
+      <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+      <hr class="w-50 mb-1" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center mt-3">
+      <div class="blog-container offset-1">
+        {% for post in object_list %}
 
-<h1>Post</h1>
-<ul>
-
-{% for post in object_list %}
-<li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
-{{ post.author.last_name }}
-{{ post.author.email }}<br>
-{{ post.body }}</li>
-
-{% endfor %}
-</ul>
-
+        <div class="col-12">
+          <div class="mb-0">
+            <a href="{% url 'article-detail' post.pk %}"
+              ><h2>{{ post.title }} {{ post.author.first_name }}</h2></a
+            >
+            <div class="mb-1">{{ post.author.last_name }}</div>
+            <div class="mb-1">By: {{ post.author.email }}</div>
+            <div class="mb-1">{{ post.body }}</div>
+          </div>
+        </div>
+        <hr class="w-50 mb-1" />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
