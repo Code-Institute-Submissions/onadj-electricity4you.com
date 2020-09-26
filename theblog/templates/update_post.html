@@ -1,11 +1,14 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
-{% if user.is_authenticated %}
+{% extends "base.html" %}
+ {% load static %} 
+
+
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
   </div>
 </div>
-{% endblock %} {% block content %}
+ {% block content %}
+
 {% if user.is_authenticated %}
 <div class="overlay"></div>
 <div class="container">
@@ -15,14 +18,18 @@
         <div class="form-group">
         <form method="POST">
             {% csrf_token %} {{ form.as_p }}
-            <button class="btn btn-secondary">Update</button>
+              <div class="mb-1">By: {{ post.author.email }} - {{ post.author.first_name }} - {{ post.post_date }} -</div>
+            <br>
             
+            <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
+            <button class="btn btn-secondary">Update</button>
         </form>
       </div>
     </div>
   </div>
   {% else %}
-  <h4>To edit post you need to be logged in</h4>
+
+  <h4>You need to  be logged in to edit post</h4>
   {% endif %}
   {% endblock %}
 </div>

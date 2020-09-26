@@ -8,11 +8,12 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = Post
     template_name = 'blog.html'
-    ordering = ['-id']
+    ordering = ['-post_date']
+    #ordering = ['-id']
 
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats)
-    return render(request, 'categories.html', {'cats': cats.title(), 'category_post':category_posts})
+    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts})
 
 class ArticleDetailView(DetailView):
 	model = Post
