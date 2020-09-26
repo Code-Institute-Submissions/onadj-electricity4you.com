@@ -19,8 +19,10 @@
       <div class="blog-container offset-1">
         <p>By:
          {{ post.author}} - {{ post.post_date }} - 
+         {% if user.is_authenticated %}
          <a href="{% url 'update_post' post.pk %}">Edit</a></p>
         <a href="{% url 'delete_post' post.pk %}">Delete</a>
+        {% endif %}
         {{ post.body }}
         <br />
         <a href="{% url 'blog' %}" class="btn btn-secondary">Back</a>
@@ -29,4 +31,6 @@
     </div>
   </div>
 </div>
-{% endblock %}
+ 
+  
+  {% endblock %}

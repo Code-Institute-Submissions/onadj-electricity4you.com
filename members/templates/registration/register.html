@@ -5,28 +5,18 @@
   </div>
 </div>
 {% endblock %} {% block content %}
-{% if user.is_authenticated %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
     <div class="col text-center mt-3">
-        <h2 class="logo-font text-center">Delete Post</h2>
-        <br>
-            <br>
-<h3>Delete: {{ post.title }} </h3>
-<br>
+        <h2 class="logo-font text-center">Register</h2>
         <div class="form-group">
         <form method="POST">
-            {% csrf_token %}
-            <strong>Are you sure?</strong><br>
-            <button class="btn btn-secondary">Delete</button>
+            {% csrf_token %} {{ form.as_p }}
+            <button class="btn btn-secondary">Register</button>
         </form>
       </div>
     </div>
   </div>
-    {% else %}
-  <h4>To delete post you need to be logged in</h4>
-  {% endif %}
-  {% endblock %}
   {% endblock %}
 </div>

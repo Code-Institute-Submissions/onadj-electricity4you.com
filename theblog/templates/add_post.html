@@ -5,6 +5,7 @@
   </div>
 </div>
 {% endblock %} {% block content %}
+{% if user.is_authenticated %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
@@ -18,5 +19,9 @@
       </div>
     </div>
   </div>
+  {% else %}
+
+  <h4>You need to  be logged in to post something</h4>
+  {% endif %}
   {% endblock %}
 </div>

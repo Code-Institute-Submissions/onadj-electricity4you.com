@@ -1,10 +1,12 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
+{% if user.is_authenticated %}
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
   </div>
 </div>
 {% endblock %} {% block content %}
+{% if user.is_authenticated %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
@@ -19,5 +21,8 @@
       </div>
     </div>
   </div>
+  {% else %}
+  <h4>To edit post you need to be logged in</h4>
+  {% endif %}
   {% endblock %}
 </div>
