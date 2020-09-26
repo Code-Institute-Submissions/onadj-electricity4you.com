@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+{% if user.is_authenticated %}
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center mt-3">
+        <h2 class="logo-font text-center">Add Category</h2>
+        <div class="form-group">
+        <form method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <button class="btn btn-secondary">Add Category</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% else %}
+
+  <h4>You need to  be logged in to post something</h4>
+  {% endif %}
+  {% endblock %}
+</div>
