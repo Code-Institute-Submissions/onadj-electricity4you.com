@@ -19,6 +19,11 @@
       </div>
     </div>
   </div>
+
+  <script>
+        var name = "{{ user.id}}";
+        document.getElementById("elder").placeholder = name;
+  </script>
   {% else %}
 
   <h4>You need to  be logged in to post something</h4>
