@@ -59,10 +59,12 @@
 
             <div class="mb-1">{{ post.author.last_name }}   
               {% if user.is_authenticated %}
+              {% if user.id == post.author.id %}
 
-            <a href="{% url 'update_post' post.pk %}">Edit</a></div>
+                        <a href="{% url 'update_post' post.pk %}">Edit</a></div>
 
-             <a href="{% url 'delete_post' post.pk %}">Delete</a>
+                        <a href="{% url 'delete_post' post.pk %}">Delete</a>
+                        {% endif %}
               {% endif %}
             <div class="mb-1">By: {{ post.author.email }} - {{ post.author.first_name }} - {{ post.post_date }} -</div>
             <br>

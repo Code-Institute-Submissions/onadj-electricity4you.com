@@ -6,6 +6,7 @@
 </div>
 {% endblock %} {% block content %}
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
@@ -24,6 +25,9 @@
       </div>
     </div>
   </div>
+    {% else %}
+    <h4>To delete post you need to be logged in</h4>
+    {% endif %}
     {% else %}
   <h4>To delete post you need to be logged in</h4>
   {% endif %}

@@ -9,7 +9,10 @@
 </div>
  {% block content %}
 
+
+
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
@@ -20,16 +23,16 @@
             {% csrf_token %} {{ form.as_p }}
               <div class="mb-1">By: {{ post.author.email }} - {{ post.author.first_name }} - {{ post.post_date }} -</div>
             <br>
-            
             <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
             <button class="btn btn-secondary">Update</button>
         </form>
-      </div>
+        </div>
     </div>
   </div>
-  {% else %}
-
-  <h4>You need to  be logged in to edit post</h4>
+        
+{% else %}
+  <h4>You cannot edit this post  because  is not yours</h4>
+  {% endif %}
   {% endif %}
   {% endblock %}
-</div>
+

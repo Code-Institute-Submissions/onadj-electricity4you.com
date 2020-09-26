@@ -10,6 +10,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col text-center mt-3">
+
       <h2 class="logo-font text-center">{{ post.title }}</h2>
       <hr class="w-50 mb-1" />
     </div>
@@ -18,10 +19,12 @@
     <div class="col text-center mt-3">
       <div class="blog-container offset-1">
         <p>By:
-         {{ post.author}} - {{ post.post_date }} - 
+         {{ post.author}} - {{ post.author.first_name }} - {{ post.author.last_name }} - {{ post.post_date }}
          {% if user.is_authenticated %}
+         {% if user.id == post.author.id %}
          <a href="{% url 'update_post' post.pk %}">Edit</a></p>
         <a href="{% url 'delete_post' post.pk %}">Delete</a>
+        {% endif %}
         {% endif %}
 
 
