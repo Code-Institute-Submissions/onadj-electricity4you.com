@@ -38,12 +38,10 @@
 
      {% if user.is_authenticated %}
      {% if user.id != post.author.id %}
-                {% if liked %}
-                    <button type="submit"  name="post_id" value="{{ post.id }}" class="btn btn-danger"> Unlike </button>
-                {% else %}
+               
 
                     <button type="submit"  name="post_id" value="{{ post.id }}" class="btn btn-primary"> Like </button>
-                {% endif %}
+            
    {% endif %}
      {% else %}
                 <a href="{% url 'account_login' %}" class="dropdown-item">Login  </a>
