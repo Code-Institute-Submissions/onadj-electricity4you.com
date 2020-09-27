@@ -18,21 +18,24 @@
   <div class="row">
     <div class="col text-center mt-3">
       <div class="blog-container offset-1">
-        <p>By:
+        By:
          {{ post.author}} - {{ post.author.first_name }} - {{ post.author.last_name }} - {{ post.post_date }}
          {% if user.is_authenticated %}
          {% if user.id == post.author.id %}
-         <a href="{% url 'update_post' post.pk %}">Edit</a></p>
+         <a href="{% url 'update_post' post.pk %}">Edit</a>
+         <br>
         <a href="{% url 'delete_post' post.pk %}">Delete</a>
         {% endif %}
         {% endif %}
-
-
         {{ post.body|safe  }}
-
-
-        <br />
+        <br/>
         <a href="{% url 'blog' %}" class="btn btn-secondary">Back</a>
+        <br>
+        <br>
+        <form action="{% url 'like_post' post.pk %}" method="POST">
+       {% csrf_token %}
+       <button type="submit"  name="post_id" value="{{ post.id }}" class="btn btn-primary"> Like </button> {{ post.total_likes  }} - Likes
+        </form>
         <hr class="w-50 mb-1" />
       </div>
     </div>
@@ -41,6 +44,3 @@
  
   
   {% endblock %}
-
-
- 
