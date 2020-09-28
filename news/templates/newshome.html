@@ -12,6 +12,10 @@
     <div class="col text-center mt-3">
      
         <h3>News</h3>
+        <br>
+         {% if request.user.is_superuser %}
+     <a href="{% url 'addnew' %}">Add News</a>
+  {% endif %}
         {% for post in object_list %}
      
            {{ post.title }}
