@@ -5,11 +5,12 @@
   </div>
 </div>
 {% endblock %} {% block content %}
-{% if user.is_authenticated %}
+ {% if request.user.is_superuser %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
     <div class="col text-center mt-3">
+    
         <h2 class="logo-font text-center">Add Category</h2>
         <div class="form-group">
         <form method="POST">
@@ -19,9 +20,7 @@
       </div>
     </div>
   </div>
-  {% else %}
-
-  <h4>You need to  be logged in to post something</h4>
+  
   {% endif %}
   {% endblock %}
 </div>
