@@ -60,7 +60,7 @@
                         <a href="{% url 'delete_post' post.pk %}">Delete</a>
                         {% endif %}
               {% endif %}
-            <div class="mb-1">By: {{ post.author }} - {{ post.post_date }} </div>
+            <div class="mb-1"><strong>By: {{ post.author }} - {{ post.date_added }}</strong></div>
             <br>
             
             <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
