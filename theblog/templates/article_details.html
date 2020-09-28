@@ -51,6 +51,25 @@
     <br>
         {{ post.total_likes  }} - Likes
         </form>
+        <br>
+        <br>
+   <h2>Comments</h2>
+   {% if not post.comments.all %}
+No Comment Yet..<a href="">
+Add One</a>
+{% else %}
+{% for comment in post.comments.all %}
+<strong>{{ comment.name }}- {{ comment.date_added }} </strong>
+<br>
+{{ comment.body }}
+{% endfor %}
+
+{% endif %}
+
+
+        <br>
+        <br>
+
         <hr class="w-50 mb-1" />
       </div>
     </div>
