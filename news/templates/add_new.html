@@ -10,15 +10,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col text-center mt-3">
-    
+    {% if request.user.is_superuser %}
         <h3>Add News</h3>
         <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
        
          <button>Add News</button>
-     
-        
+        </form>
+        {% endif %}
     </div>
   </div>
 </div>
