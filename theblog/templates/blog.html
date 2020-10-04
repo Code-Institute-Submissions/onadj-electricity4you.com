@@ -44,26 +44,30 @@
           <div class="mb-0">
          <a href="{% url 'article-detail' post.pk %}">
         <h2>{{ post.title }} 
-
-
         - <a href="{% url 'category' post.category %}">
          {{ post.category }}</a>
-
-        {{ post.author.first_name }}</h2></a>
-
-            <div class="mb-1">{{ post.author.last_name }}   
+         
+            <div class="mb-1">  
               {% if user.is_authenticated %}
-              {% if user.id == post.author.id %}
+          
 
-                        <a href="{% url 'update_post' post.pk %}">Edit</a></div>
-
-                        <a href="{% url 'delete_post' post.pk %}">Delete</a>
-                        {% endif %}
               {% endif %}
-            <div class="mb-1"><strong>By: {{ post.author }} - {{ post.date_added }}</strong></div>
+              <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
+              <br>
+              {{ post.total_likes  }} - Likes
+             
+            <div class="mb-1"><h3><strong>By: {{ post.author }} 
             <br>
+            <br>
+             {{ post.date_added }}</strong></h3></div>
+            <br>
+                {% if user.id == post.author.id %}
+
+                    <a href="{% url 'update_post' post.pk %}">Edit</a></div>
+
+                    <a href="{% url 'delete_post' post.pk %}">Delete</a>
+                        {% endif %}
             
-            <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
           </div>
         </div>
       

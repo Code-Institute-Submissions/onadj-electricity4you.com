@@ -14,7 +14,9 @@
         <h3>News</h3>
         <br>
          {% if request.user.is_superuser %}
-     <a href="{% url 'addnew' %}">Add News</a>
+     
+     <br>
+      
   {% endif %}
         {% for post in object_list %}
      
@@ -24,20 +26,19 @@
             <br>
             {{ post.body }}
             <br>
+            <!---- {{ post.image_url }} --->
+            <br>
+            <!--{{ post.image }} -->
+            <br>
             {{ post.date_added }}
             <br>
             
-              <img class="card-img-top" src="{{ MEDIA_URL }}newsphoto1.jpg">
-            <br>
-            
+            <a href="{% url 'deletenews' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
             <hr>
 {% endfor %}
+<a href="{% url 'addnew' %}" class="btn btn-success btn-sm">Add News</a>
     </div>
   </div>
 </div>
-
-               
-
-      
-  {% endblock %}
+{% endblock %}
 

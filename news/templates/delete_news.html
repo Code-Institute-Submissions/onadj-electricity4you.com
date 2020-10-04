@@ -12,19 +12,28 @@
   <div class="row">
     <div class="col text-center mt-3">
     {% if request.user.is_superuser %}
-        <h3>Add News</h3>
+    <h2 class="logo-font text-center">Delete News?</h2>
+    <br>
+    
+        <h3>- {{ post.title }}- {{ post.body }}- </h3>
       
-      <form method="POST" enctype="multipart/form-data">
+      <form method="POST">
             {% csrf_token %} {{ form|crispy}}
-            <button class="btn btn-secondary">POST</button>
+            <button class="btn btn-secondary">DELETE</button>
             <br>
             <br>
             <a href="{% url 'newshome' %}" class="btn btn-secondary">BACK</a>
         </form>
-     
-        {% endif %}
+     {% endif %}
     </div>
   </div>
 </div>
-{% endblock %}
+
+             
+        
+        
+
+
+
+  {% endblock %}
 
