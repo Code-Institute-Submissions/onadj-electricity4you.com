@@ -17,10 +17,10 @@
       <form method="POST" enctype="multipart/form-data">
             {% csrf_token %} {{ form|crispy}}
             {{ form.media }}
-            <button class="btn btn-secondary">POST</button>
+            <button class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">POST</button>
             <br>
             <br>
-            <a href="{% url 'newshome' %}" class="btn btn-secondary">BACK</a>
+            <a href="{% url 'newshome' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">BACK</a>
         </form>
      
         {% endif %}

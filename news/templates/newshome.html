@@ -14,7 +14,7 @@
         <h3>News</h3>
         <br>
          {% if request.user.is_superuser %}
-         <a href="{% url 'addnew' %}" class="btn btn-success btn-sm">Add News</a>
+         <a href="{% url 'addnew' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">Add News</a>
          
         
      
@@ -37,7 +37,7 @@
 {% endif %}
             <br>
             {% if request.user.is_superuser %}
-           <a href="{% url 'deletenews' post.pk %}" class="btn btn-danger btn-sm">Delete News</a>
+           <a href="{% url 'deletenews' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">Delete News</a>
            {% endif %}
             <br>
             {{ post.date_added }}
