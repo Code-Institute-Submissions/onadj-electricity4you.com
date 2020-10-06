@@ -14,7 +14,11 @@
         <h3>News</h3>
         <br>
          {% if request.user.is_superuser %}
+         <a href="{% url 'addnew' %}" class="btn btn-success btn-sm">Add News</a>
+         
+        
      
+        
      <br>
       
   {% endif %}
@@ -27,19 +31,20 @@
             {{ post.body }}
             <br>
             {% if post.image %}
-   <img src="{{ post.image.url }}">
-   <br>
-{% endif %}
-            <br>
-           
-            <br>
-            {{ post.date_added }}
+           <img src="{{ post.image.url }}">
             <br>
             
-            <a href="{% url 'deletenews' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
+{% endif %}
+            <br>
+            {% if request.user.is_superuser %}
+           <a href="{% url 'deletenews' post.pk %}" class="btn btn-danger btn-sm">Delete News</a>
+           {% endif %}
+            <br>
+            {{ post.date_added }}
+            <br> 
             <hr>
 {% endfor %}
-<a href="{% url 'addnew' %}" class="btn btn-success btn-sm">Add News</a>
+
     </div>
   </div>
 </div>
