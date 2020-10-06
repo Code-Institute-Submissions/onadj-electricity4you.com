@@ -26,9 +26,12 @@
             <br>
             {{ post.body }}
             <br>
-            <!---- {{ post.image_url }} --->
+            {% if post.image %}
+   <img src="{{ post.image.url }}">
+   <br>
+{% endif %}
             <br>
-            <!--{{ post.image }} -->
+           
             <br>
             {{ post.date_added }}
             <br>
