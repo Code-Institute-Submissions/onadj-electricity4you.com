@@ -8,7 +8,7 @@ html{
 }
 
 body{
-    background:url('/media/homepage1.jpg') no-repeat center center fixed;
+    background:url('/media/jumbotron.jpg') no-repeat center center fixed;
     background-size:cover;
     height: calc(100vh - 164px); 
     color: #3CB371;
@@ -318,5 +318,7 @@ i {
     background-color: #3CB371;
 }
 
-/* Blog */
+
+
+
 
