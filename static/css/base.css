@@ -318,7 +318,25 @@ i {
     background-color: #3CB371;
 }
 
+/* news */
+.news_container{
+    background-color: black;
+}
 
+/* news */
+.blog_container{
+    background:url('/media/blogbackground.jpg') no-repeat center center fixed;
+}
 
+.container_title{
+   
+   
+    
+}
 
+.container_category{
+   
+   
+  
+}
 

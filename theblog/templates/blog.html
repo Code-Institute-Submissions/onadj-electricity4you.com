@@ -1,92 +1,120 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container header-container">
+<div class="container">
   <div class="row">
-    <div class="col"></div>
+    <div class="col"><h3 class="text-center">Welcome To Our Blog!</h3></div>
   </div>
 </div>
 {% endblock %} {% block content %}
 
+
 <div class="overlay"></div>
+
 <div class="container-fluid">
   <div class="row">
-    <div class="col text-center mt-3">
-     
-
-
+    <div class="col text-center">
 {% if user.is_authenticated %}
-
 {% if cat_menu %}
-      <h3>Categories:</h3>
+{% for item in cat_menu %}
+                         <li class="list-inline-item"><a href="{% url 'category' item %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">{{ item }}</a></li>
+{% endfor %}
+                            
 
-                {% for item in cat_menu %}
-                <a href="{% url 'category' item %}">{{ item }}</a>
+                <a href="{% url 'add_post' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border-white">Add Post</a>
+{% endif %}
                 <br>
-                {% endfor %}
-          
+                <br>
+{% if request.user.is_superuser %}
+            <a href="{% url 'add_category' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border-white">Add Category</a>
 {% endif %}
-
-<a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
-<br>
- {% if request.user.is_superuser %}
-<a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
-{% endif %}
-
-<hr class="w-50 mb-1" />
     </div>
   </div>
-  <div class="row">
-    <div class="col text-center mt-3">
-      <div class="blog-container offset-1">
+</div>
 
-        {% for post in object_list %}
-     
-        <div class="col-12">
-          <div class="mb-0">
-         <a href="{% url 'article-detail' post.pk %}">
-        <h2>{{ post.title }} 
-        - <a href="{% url 'category' post.category %}">
-         {{ post.category }}</a>
-         
-            <div class="mb-1">  
-              {% if user.is_authenticated %}
-          
+{% for post in object_list %}
+    <a href="{% url 'article-detail' post.pk %}">
+        <div class="container container_title text-center">
+            <div class="row">
+               <div class="col">
+ <h3 class=" font-weight-bold shop-now-button btn btn-sm rounded-0 text-uppercase border-white">{{ post.title }}</h3>
+               </div>
+            </div>
+        </div>
+<br>
 
-              {% endif %}
-              <div class="mb-1">{{ post.body|slice:":200"|safe }}</div>
-              <br>
-              {{ post.total_likes  }} - Likes
-             
-            <div class="mb-1"><h3><strong>By: {{ post.author }} 
-            <br>
-            <br>
-             {{ post.date_added }}</strong></h3></div>
-            <br>
-                {% if user.id == post.author.id %}
+    <div class="container-fluid container_category text-center font-weight-bold">
+          <div clas="row">
+             <div class="col">
+             <a href="{% url 'category' post.category %}">
+Category: {{ post.category }}</a>
+           </div>
+        </div>
+    </div>
+<br>
+{% if user.is_authenticated %}
+{% endif %}
 
-                    <a href="{% url 'update_post' post.pk %}">Edit</a></div>
-
-                    <a href="{% url 'delete_post' post.pk %}">Delete</a>
-                        {% endif %}
-            
+<div class="container-fluid container_bodypost text-center">
+        <div clas="row">
+           <div class="col">
+               <p class="font-weight-light"> <i class="far fa-comment-alt fa-2x"></i>  {{ post.body|slice:":200"|safe }}</p>
           </div>
         </div>
-      
-        <hr class="w-50 mb-1" />
-        
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+</div>
+<br>
+<div class="container-fluid container_likes text-center">
+          <div clas="row">
+            <div class="col">
+               <i class="fa fa-thumbs-up fa-2x"></i>  {{ post.total_likes  }} 
+            </div>
+        </div>
+</div> 
+<br>
+<div class="container-fluid container_author text-center">
+          <div clas="row">
+            <div class="col">
+                <i class="fas fa-user-edit fa-2x"></i>  {{ post.author }} 
+            </div>
+        </div>
+</div>
+    <br>
+        <div class="container-fluid container_author text-center">
+            <div clas="row">
+                <div class="col">
+                   <i class="fas fa-clock fa-2x"></i> {{ post.date_added }}
+                </div>
+             </div>
+        </div>
+    <br>
+{% if user.id == post.author.id %}
 
+   <div class="container-fluid container_editdeletepost text-center">
+                <div clas="row">
+                    <div class="col">
+                            <a href="{% url 'update_post' post.pk %}"class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-white">Edit</a>
+                            <br>
+                            <a href="{% url 'delete_post' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-danger">Delete</a>
+             </div>
+        </div>
+   </div>
+<hr>
+{% endif %}
+{% endfor %}
+{% else %}
 
-      {% else %}
-       <h2>If you want to enter our Blog you need to login </h2>
+ <div class="container-fluid container_noentry text-center">
+    <div clas="row">
+                <div class="col">
+    <h2>If you want to enter our Blog you need to login </h2>
        
-<a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
 
-<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-       {% endif %}
-
+    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+       </div>
+    </div>
+ </div>
+ <hr>
+{% endif %}
+ 
       
   {% endblock %}
-</div>
+

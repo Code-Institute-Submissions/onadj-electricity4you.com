@@ -1,52 +1,43 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+<div class="container">
+        <div class="row">
+            <div class="col"><h3 class="text-center">News</h3>
+            </div>
+        </div>
 </div>
 {% endblock %} {% block content %}
-
 <div class="overlay"></div>
-<div class="container-fluid">
+<div class="container-fluid news_container">
   <div class="row">
-    <div class="col text-center mt-3">
+         {% for post in object_list %}
+               <div class="col-md-6 text-center p-2">
+ 
+                   <h3>{{ post.title }}</h3>
+                   <br>
+                <p class="text-center">{{ post.body }}</p>   
+                   <br>
+             By: {{ post.author }}
+               <br>
+               Post Dated: {{ post.date_added }}
      
-        <h3>News</h3>
-        <br>
-         {% if request.user.is_superuser %}
-         <a href="{% url 'addnew' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">Add News</a>
-         
+           {% if request.user.is_superuser %}
+              <br>
+              <br>
+           <a href="{% url 'addnew' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-white">Add News</a>
+              <br>
+              <br>
+           <a href="{% url 'deletenews' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-danger">Delete News</a>
+           {% endif %} 
         
-     
-        
-     <br>
-      
-  {% endif %}
-        {% for post in object_list %}
-     
-           {{ post.title }}
-            <br>
-            {{ post.author }}
-            <br>
-            {{ post.body }}
-            <br>
-            {% if post.image %}
-           <img src="{{ post.image.url }}">
-            <br>
-            
-{% endif %}
-            <br>
-            {% if request.user.is_superuser %}
-           <a href="{% url 'deletenews' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">Delete News</a>
-           {% endif %}
-            <br>
-            {{ post.date_added }}
-            <br> 
-            <hr>
+              </div>
+
+    <div class="col-md-6 p-2">
+          <img src="{{ post.image.url }}">
+     </div>
 {% endfor %}
 
-    </div>
   </div>
 </div>
-{% endblock %}
 
+<br>
+{% endblock %}
