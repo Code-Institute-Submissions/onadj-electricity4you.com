@@ -64,27 +64,27 @@
                <i class="fa fa-thumbs-up fa-2x"></i>  {{ post.total_likes  }}
 
 <br>
+<br>
 
           
                 <i class="fas fa-user-edit  fa-2x"></i> {{ post.author }} 
 
-    <br>
-      
+<br>
+<br>
                    <i class="fas fa-clock  fa-2x"></i> {{ post.date_added }}
       
     <br>
     <hr>
 {% if user.id == post.author.id %}
-
-        <a href="{% url 'update_post' post.pk %}"class="btn btn-sm btn-outline-info font-light">Edit</a>
+<br>
+        <a href="{% url 'update_post' post.pk %}"class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Edit</a>
             <br>
-            <br>
-        <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm btn-outline-danger font-light">Delete</a>
+            
+        <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete</a>
+               </div>
             </div>
         </div>
-    </div>
-<hr>
-
+<br>
 {% endif %}
 
 {% endfor %}
