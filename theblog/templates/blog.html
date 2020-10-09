@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
 <div class="container-fluid welcomeblog_container">
   <div class="row">
-    <div class="col"><h3 class="text-center">Welcome To Our Blog!</h3></div>
+    <div class="col"><h3 class="text-center text-success">Welcome To Our Blog!</h3></div>
   </div>
 </div>
 {% endblock %} {% block content %}
@@ -15,23 +15,23 @@
 {% if user.is_authenticated %}
 {% if cat_menu %}
 {% for item in cat_menu %}
-                         <li class="list-inline-item"><a href="{% url 'category' item %}" class="blog-button btn btn-sm rounded-0 text-uppercase">{{ item }}</a></li>
+                         <li class="list-inline-item"><a href="{% url 'category' item %}" class="blog-button btn btn-sm rounded-0 text-uppercase"><strong>{{ item }}</strong></a></li>
 {% endfor %}
                             
 
-                <a href="{% url 'add_post' %}" class="blog-button btn btn-sm rounded-0 text-uppercase">Add Post</a>
+                <a href="{% url 'add_post' %}" class="blog-button btn btn-sm rounded-0 text-uppercase"><strong>Add Post</strong></a>
 {% endif %}
                 <br>
                 <br>
                 
 {% if request.user.is_superuser %}
-            <a href="{% url 'add_category' %}" class="blog-button btn btn-sm rounded-0 text-uppercase">Add Category</a>
+            <a href="{% url 'add_category' %}" class="blog-button btn btn-sm rounded-0 text-uppercase"><strong>Add Category</strong></a>
 {% endif %}
     </div>
   </div>
 </div>
 
-<br>
+
 {% for post in object_list %}
 
     <a href="{% url 'article-detail' post.pk %}">
@@ -40,7 +40,7 @@
             <div class="row">
                <div class="col">
 
- <h2 class="btn btn-lg font-weight-bold rounded-0 btn-outline-light text-white ">{{ post.title }} </h2>
+ <h2 class="btn btn-lg font-weight-bold rounded-0 btn-outline-light text-white">{{ post.title }} </h2>
  <br>
    <h5 class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Read</h5>
 
@@ -77,13 +77,10 @@
     <hr>
 {% if user.id == post.author.id %}
 <br>
-        <a href="{% url 'update_post' post.pk %}"class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Edit</a>
-            <br>
-            
-        <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete</a>
-               </div>
-            </div>
-        </div>
+       
+      
+        
+<br>
 <br>
 {% endif %}
 
@@ -95,15 +92,16 @@
                 <div class="col">
     <h2>If you want to enter our Blog you need to login </h2>
        
-    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-
-    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+    <a href="{% url 'account_login' %}" class="blog-button btn btn-sm rounded-0 text-uppercase"><strong>Login</strong></a>
+    <p class="text-success">or</p>
+    <a href="{% url 'account_signup' %}" class="blog-button btn btn-sm rounded-0 text-uppercase"><strong>Register</strong></a>
        </div>
     </div>
  </div>
- <hr>
+ 
 {% endif %}
  
       
   {% endblock %}
 
+class="blog-button btn btn-sm rounded-0 text-uppercase"

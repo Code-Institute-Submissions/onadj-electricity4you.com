@@ -1,26 +1,26 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
-</div>
+
 {% endblock %} {% block content %}
 {% if user.is_authenticated %}
 {% if user.id == post.author.id %}
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
-    <div class="col text-center mt-3">
-        <h2 class="logo-font text-center">Delete Post</h2>
+    <div class="col text-center">
+        <h2 class="text-center text-success">Delete Post</h2>
         <br>
             <br>
-<h3>Delete: {{ post.title }} </h3>
+<h4>Delete: {{ post.title }}</h4>
+ 
 <br>
         <div class="form-group">
         <form method="POST">
             {% csrf_token %}
             <strong>Are you sure?</strong><br>
-            <button class="btn btn-secondary">Delete</button>
+            <br>
+            <br>
+            <button class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete</button>
+            <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
         </form>
       </div>
     </div>

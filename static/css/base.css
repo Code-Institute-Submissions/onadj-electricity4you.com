@@ -365,6 +365,7 @@ i {
 
 .blog_container{
     background:url('/media/blogbackground.jpg') no-repeat center center fixed;
+    
 }
 
 .welcomeblog_container{
@@ -372,5 +373,5 @@ i {
 }
 
 hr{
-  border: .5px solid white;
+  border: 2px solid green;
 }

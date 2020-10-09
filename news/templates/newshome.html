@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
 <div class="container">
         <div class="row">
-            <div class="col"><h3 class="text-center">News</h3>
+            <div class="col">
+            <h3 class="text-center text-success">News</h3>
             </div>
         </div>
 </div>
@@ -18,15 +19,16 @@
                    <br>
              By: {{ post.author }}
                <br>
+               <br>
                Post Dated: {{ post.date_added }}
      
            {% if request.user.is_superuser %}
               <br>
               <br>
-           <a href="{% url 'addnew' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-white">Add News</a>
+           <a href="{% url 'addnew' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Add News</a>
               <br>
               <br>
-           <a href="{% url 'deletenews' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-danger">Delete News</a>
+           <a href="{% url 'deletenews' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete News</a>
            {% endif %} 
         
               </div>
