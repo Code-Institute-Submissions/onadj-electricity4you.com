@@ -73,7 +73,7 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-ninja fa-2x"></i></div>
-                                <p class="font-weight-bold my-0">My Account</p>
+                                <p class="font-weight-bold my-0 text-success">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -95,9 +95,9 @@
                                 <div><i class="fas fa-cart-arrow-down fa-2x"></i></div>
                                 <p class="font-weight-bold my-0">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        <p class="text-success">${{ grand_total|floatformat:2 }}</p>
                                     {% else %}
-                                        $0.00
+                                        <p class="text-success">$0.00</p>
                                     {% endif %}
                                 </p>
                             </div>
