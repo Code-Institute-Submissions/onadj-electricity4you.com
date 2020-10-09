@@ -10,8 +10,8 @@ html{
 body{
     background:url('/media/jumbotron.jpg') no-repeat center center fixed;
     background-size:cover;
-    height: calc(100vh - 164px); 
-    color: #3CB371;
+    
+    color:white;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -33,13 +33,13 @@ body{
 
 .shop-now-button {
     background: black;
-    color:#3CB371;
+    color:grey;
     min-width: 260px;
 }
 
 .btn-black {
     background: black;
-    color: #3CB371;
+    color: grey;
 }
 
 
@@ -64,7 +64,7 @@ body{
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: #3CB371;
+    color: whitesmoke;
 }
 
 .text-black {
@@ -72,7 +72,7 @@ body{
 }
 
 .border-black {
-    border: 1px solid #3CB371 !important;
+    border: 1px solid black !important;
 }
 
 
@@ -111,7 +111,7 @@ a.category-badge > span.badge:hover {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: black;
 	z-index: -1;
 }
 
@@ -308,35 +308,69 @@ input[name='q']::placeholder {
 
 
 i {
-    color: #3CB371;
+    color: white;
 }
 
 .delivery-logo-color{
-    color: #3CB371;
+    color: white;
 }
 .navbar  {
-    background-color: #3CB371;
+    background-color: white;
 }
 
-/* news */
-.news_container{
-    background-color: black;
+/* blog */
+.welcomeblog_container{
+    
 }
 
+.category_container{
+    
+  
+
+
+}
 /* news */
+
+.blog-button {
+    background: white;
+    color:black;
+    min-width: 100px;
+}
+
+.title{
+
+}
+
+.category{
+
+}
+
+.post{
+
+}
+
+.like{
+
+}
+
+.author{
+
+}
+
+.date{
+
+
+}
+
+
 .blog_container{
     background:url('/media/blogbackground.jpg') no-repeat center center fixed;
 }
 
-.container_title{
-   
-   
-    
+.welcomeblog_container{
+ background-color: black;
 }
 
-.container_category{
-   
-   
-  
+hr{
+  border: .5px solid white;
 }
-

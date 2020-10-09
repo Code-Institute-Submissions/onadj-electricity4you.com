@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container">
+<div class="container-fluid welcomeblog_container">
   <div class="row">
     <div class="col"><h3 class="text-center">Welcome To Our Blog!</h3></div>
   </div>
@@ -9,95 +9,84 @@
 
 <div class="overlay"></div>
 
-<div class="container-fluid">
+<div class="container-fluid category_container p-1">
   <div class="row">
     <div class="col text-center">
 {% if user.is_authenticated %}
 {% if cat_menu %}
 {% for item in cat_menu %}
-                         <li class="list-inline-item"><a href="{% url 'category' item %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase">{{ item }}</a></li>
+                         <li class="list-inline-item"><a href="{% url 'category' item %}" class="blog-button btn btn-sm rounded-0 text-uppercase">{{ item }}</a></li>
 {% endfor %}
                             
 
-                <a href="{% url 'add_post' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border-white">Add Post</a>
+                <a href="{% url 'add_post' %}" class="blog-button btn btn-sm rounded-0 text-uppercase">Add Post</a>
 {% endif %}
                 <br>
                 <br>
+                
 {% if request.user.is_superuser %}
-            <a href="{% url 'add_category' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border-white">Add Category</a>
+            <a href="{% url 'add_category' %}" class="blog-button btn btn-sm rounded-0 text-uppercase">Add Category</a>
 {% endif %}
     </div>
   </div>
 </div>
 
+<br>
 {% for post in object_list %}
+
     <a href="{% url 'article-detail' post.pk %}">
-        <div class="container container_title text-center">
+    
+        <div class="container-fluid blog_container text-center">
             <div class="row">
                <div class="col">
- <h3 class=" font-weight-bold shop-now-button btn btn-sm rounded-0 text-uppercase border-white">{{ post.title }}</h3>
-               </div>
-            </div>
-        </div>
+
+ <h2 class="btn btn-lg font-weight-bold rounded-0 btn-outline-light text-white ">{{ post.title }} </h2>
+ <br>
+   <h5 class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Read</h5>
+
+<br>
 <br>
 
-    <div class="container-fluid container_category text-center font-weight-bold">
-          <div clas="row">
-             <div class="col">
+   
              <a href="{% url 'category' post.category %}">
-Category: {{ post.category }}</a>
-           </div>
-        </div>
-    </div>
+<p class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Category: {{ post.category }}</p></a>
+     
+    
 <br>
 {% if user.is_authenticated %}
 {% endif %}
 
-<div class="container-fluid container_bodypost text-center">
-        <div clas="row">
-           <div class="col">
-               <p class="font-weight-light"> <i class="far fa-comment-alt fa-2x"></i>  {{ post.body|slice:":200"|safe }}</p>
-          </div>
-        </div>
-</div>
+
+            <!----  <p class="font-weight-light font-italic"> <i class="far fa-comment-alt fa-2x"></i>  {{ post.body|slice:":200"|safe }}</p> -->
+  
 <br>
-<div class="container-fluid container_likes text-center">
-          <div clas="row">
-            <div class="col">
-               <i class="fa fa-thumbs-up fa-2x"></i>  {{ post.total_likes  }} 
-            </div>
-        </div>
-</div> 
+
+               <i class="fa fa-thumbs-up fa-2x"></i>  {{ post.total_likes  }}
+
 <br>
-<div class="container-fluid container_author text-center">
-          <div clas="row">
-            <div class="col">
-                <i class="fas fa-user-edit fa-2x"></i>  {{ post.author }} 
-            </div>
-        </div>
-</div>
+
+          
+                <i class="fas fa-user-edit  fa-2x"></i> {{ post.author }} 
+
     <br>
-        <div class="container-fluid container_author text-center">
-            <div clas="row">
-                <div class="col">
-                   <i class="fas fa-clock fa-2x"></i> {{ post.date_added }}
-                </div>
-             </div>
-        </div>
+      
+                   <i class="fas fa-clock  fa-2x"></i> {{ post.date_added }}
+      
     <br>
+    <hr>
 {% if user.id == post.author.id %}
 
-   <div class="container-fluid container_editdeletepost text-center">
-                <div clas="row">
-                    <div class="col">
-                            <a href="{% url 'update_post' post.pk %}"class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-white">Edit</a>
-                            <br>
-                            <a href="{% url 'delete_post' post.pk %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase border border-danger">Delete</a>
-             </div>
+        <a href="{% url 'update_post' post.pk %}"class="btn btn-sm btn-outline-info font-light">Edit</a>
+            <br>
+            <br>
+        <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm btn-outline-danger font-light">Delete</a>
+            </div>
         </div>
-   </div>
+    </div>
 <hr>
+
 {% endif %}
+
 {% endfor %}
 {% else %}
 
