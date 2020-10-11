@@ -20,21 +20,14 @@
       <form method="POST">
             {% csrf_token %} {{ form|crispy}}
             
-            <button class="shop-now-button btn btn-sm rounded-0 text-uppercase ">DELETE</button>
+            <button class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">DELETE</button>
             <br>
             <br>
-            <a href="{% url 'newshome' %}" class="shop-now-button btn btn-sm rounded-0 text-uppercase ">BACK</a>
+            <a href="{% url 'newshome' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">BACK</a>
         </form>
      {% endif %}
     </div>
   </div>
 </div>
-
-             
-        
-        
-
-
-
-  {% endblock %}
+{% endblock %}
 
