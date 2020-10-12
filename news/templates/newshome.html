@@ -14,9 +14,9 @@
          {% for post in object_list %}
 
                             <div class="col-md-6 text-center">
-                                <h3>{{ post.title }}</h3>
+                        <h3>{{ post.title }}</h3>
                                 
-                                <p class="text-center font-italic">{{ post.body }}</p>   
+                     <p class="text-center font-italic">{{ post.body }}</p>   
                                 <br>
                             <i class="fas fa-user-edit  fa-2x"></i> {{ post.author }}
                             <br>
@@ -32,19 +32,15 @@
                             <br>
                             <br>
                         <a href="{% url 'deletenews' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete News</a>
-                        {% endif %} 
-                       
-                        </div>
+                        {% endif %}           
+      </div>
 
 
-                <div class="col-md-6 p-4">
+      <div class="col-md-6 p-4">
                 <img src="{{ post.image.url }}" class="rounded mx-auto d-block w-100">
-                </div>
- 
-            {% endfor %}
-       
-               
             </div>
+        {% endfor %}    
+    </div>
 </div>
 <br>
 <br>
