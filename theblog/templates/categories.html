@@ -21,6 +21,8 @@
  <p class="text-center">{{ post.post_date }}</p>
  <br>
  <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
+ <br>
+ 
 <br>
 
 {% if user.is_authenticated %}
@@ -32,7 +34,7 @@
 
 <a href="{% url 'delete_post' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete</a>
 
-<a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
+
 
 </div>
 </div>
