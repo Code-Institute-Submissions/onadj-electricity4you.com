@@ -1,0 +1,1 @@
+web: gunicorn electricity4you.wsgi:application
