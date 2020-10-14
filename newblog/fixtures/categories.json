@@ -1,0 +1,19 @@
+[
+  {
+    "pk": 1,
+    "model": "newblog.category",
+    "fields": {
+      "name": "Vintage chopper",
+      "friendly_name": "chopper"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "newblog.category",
+    "fields": {
+      "name": "Vintage chopper",
+      "friendly_name": "Vintage chopper"
+    }
+  }
+]
+

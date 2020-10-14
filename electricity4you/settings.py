@@ -46,9 +46,9 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    'theblog',
     'members',
     'news',
+    
 
     # Other
     'crispy_forms',
@@ -106,7 +106,7 @@ AUTHENTICATION_BACKENDS = [
     
 ]
 
-SITE_ID=1
+SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -124,17 +124,23 @@ WSGI_APPLICATION = 'electricity4you.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
+#if 'DATABASE_URL' in os.environ:
+  #  print("Using Postgres")
+   # DATABASES = {
+     #   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+  #  }
+#else:
+  #  print("Using SqLite")
+DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
+             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+         }
+  }
+
+ # DATABASES = {
+ #    'default': dj_database_url.parse("postgres://dgvxshzwnsqhvy:fb8cd25b0187af20cd14bc4bf29068bb646fedcb4d2d9509e7c6978fef9b1fa8@ec2-52-17-53-249.eu-west-1.compute.amazonaws.com:5432/dcp1fnhq3uk7rs")
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
