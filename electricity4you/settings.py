@@ -132,15 +132,15 @@ WSGI_APPLICATION = 'electricity4you.wsgi.application'
 #else:
   #  print("Using SqLite")
 DATABASES = {
-        'default': {
+       'default': {
              'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-         }
+        }
   }
 
- # DATABASES = {
- #    'default': dj_database_url.parse("postgres://dgvxshzwnsqhvy:fb8cd25b0187af20cd14bc4bf29068bb646fedcb4d2d9509e7c6978fef9b1fa8@ec2-52-17-53-249.eu-west-1.compute.amazonaws.com:5432/dcp1fnhq3uk7rs")
-# }
+# DATABASES = {
+ #   'default': dj_database_url.parse('postgres://#dgvxshzwnsqhvy:fb8cd25b0187af20cd14bc4bf29068bb646fedcb4d2d9509e7c6978fef9b1fa8@ec2-52-17-53-249.eu-west-1.compute.amazonaws.com:5432/dcp1fnhq3uk7rs')
+ # }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
