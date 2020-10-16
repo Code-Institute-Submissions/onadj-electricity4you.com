@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load static %} 
+
+ {% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<div class="overlay"></div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+        <h2 class="text-center text-success">Edit Post</h2>
+        <div class="form-group">
+        <form method="POST">
+            {% csrf_token %} {{ form.as_p }}
+      
+            <button class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Update</button>
+            <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
+        </form>
+        </div>
+    </div>
+  </div>
+        
+{% else %}
+  <h4>You cannot edit this post  because  is not yours</h4>
+  {% endif %}
+  {% endif %}
+  {% endblock %}
+

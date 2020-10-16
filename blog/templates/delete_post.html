@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+
+{% endblock %} {% block content %}
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <h2 class="text-center text-success">Delete Post</h2>
+        <br>
+            <br>
+<h4>Delete: {{ post.title }}</h4>
+ 
+<br>
+        <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <strong>Are you sure?</strong><br>
+            <br>
+            <br>
+            <button class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete</button>
+            <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
+        </form>
+      </div>
+    </div>
+  </div>
+    {% else %}
+    <h4>To delete post you need to be logged in</h4>
+    {% endif %}
+    {% else %}
+  <h4>To delete post you need to be logged in</h4>
+  {% endif %}
+  {% endblock %}
+</div>

@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+{% endblock %} {% block content %}
+{% if user.is_authenticated %}
+
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center mt-3">
+        <h2 class="logo-font text-center text-success">Add Post</h2>
+        <div class="form-group">
+        <form method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <button class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Post</button>
+            <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+        var name = "{{ user.id }}";
+        document.getElementById("elder").value = name;
+  </script>
+  {% else %}
+
+  <h4>You need to be logged in to post something</h4>
+  
+  {% endif %}
+  {% endblock %}
+</div>
