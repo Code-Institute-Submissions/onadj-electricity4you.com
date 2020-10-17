@@ -177,7 +177,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Bucket Config
 if 'USE AWS' in os.environ:
-    AWS_STORAGE_BUCKET_NAME = "electricity4you"
+    AWS_STORAGE_BUCKET_NAME = "onagy-electricity4you"
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
