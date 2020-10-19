@@ -152,27 +152,27 @@ input[name='q']::placeholder {
 
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
-    border-bottom-color: #007bff !important;
+    border-bottom-color: white !important;
 }
 
 .arrow-secondary {
-    border-bottom-color: #6c757d !important;
+    border-bottom-color: white !important;
 }
 
 .arrow-success {
-    border-bottom-color: #28a745 !important;
+    border-bottom-color: white !important;
 }
 
 .arrow-danger {
-    border-bottom-color: #dc3545 !important;
+    border-bottom-color: grey !important;
 }
 
 .arrow-warning {
-    border-bottom-color: #ffc107 !important;
+    border-bottom-color: red !important;
 }
 
 .arrow-info {
-    border-bottom-color: #17a2b8 !important;
+    border-bottom-color: green !important;
 }
 
 .arrow-light {
@@ -237,7 +237,7 @@ input[name='q']::placeholder {
     line-height: 1.5;
     border-radius: 0;
 
-    /* standard bootstrap btn transitions */
+/* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -334,7 +334,7 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
-
+}
 
 i {
     color: white;
@@ -343,54 +343,16 @@ i {
 .delivery-logo-color{
     color: white;
 }
+
 .navbar  {
     background-color: white;
 }
-
-/* blog */
-.welcomeblog_container{
-    
-}
-
-.category_container{
-    
-  
-
-
-}
-/* news */
 
 .blog-button {
     background: white;
     color:black;
     min-width: 100px;
 }
-
-.title{
-
-}
-
-.category{
-
-}
-
-.post{
-
-}
-
-.like{
-
-}
-
-.author{
-
-}
-
-.date{
-
-
-}
-
 
 .blog_container{
     background:url('/media/blogbackground.jpg') no-repeat center center fixed;
@@ -400,6 +362,7 @@ i {
 .welcomeblog_container{
  background-color: black;
 }
+
 
 hr{
   border: 2px solid green;

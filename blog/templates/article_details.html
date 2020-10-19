@@ -48,8 +48,12 @@
    {% endif %}
   
 {% else %}
-     <a href="{% url 'account_login' %}" class="blog-button btn btn-sm rounded-0 text-uppercase">Login</a> To Like
+     <a href="{% url 'account_login' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Login</a> To Like
+     <br>
+     <br>
+     <a href="{% url 'blog' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Back</a>
     {% endif %}
+    <br>
     <br>
         {{ post.total_likes  }} - Likes
         </form>

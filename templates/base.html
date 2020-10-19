@@ -50,7 +50,7 @@
         <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-white my-0">Electricity<strong class="text-success">4</strong>you</h2>
+                    <h2 class="logo-font font-weight-bold text-dark my-0">Electricity<strong class="text-success">4</strong>you</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -73,7 +73,7 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-biking fa-2x"></i></div>
-                                <p class="font-weight-bold my-0 text-success">My Account</p>
+                                <p class="font-weight-bold my-0 text-dark">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -95,9 +95,9 @@
                                 <div><i class="fas fa-cart-arrow-down fa-2x"></i></div>
                                 <p class="font-weight-bold my-0">
                                     {% if grand_total %}
-                                        <p class="text-success">${{ grand_total|floatformat:2 }}</p>
+                                        <p class="font-weight-bold text-dark">${{ grand_total|floatformat:2 }}</p>
                                     {% else %}
-                                        <p class="text-success">$0.00</p>
+                                        <p class=" font-weight-bold text-dark">$0.00</p>
                                     {% endif %}
                                 </p>
                             </div>
@@ -117,7 +117,7 @@
         </div>
         <div id="delivery-banner" class="row text-right">
             <div class="col bg-black text-white">
-                <h4 class="my-1" style="color:black">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+                <h4 class="my-1 font-weight-bold" style="color:green">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
             </div>            
         </div>
     </header>
@@ -154,10 +154,9 @@
     <br>
 <footer>
  <div class="container-fluid text-center p-5">
- <div class="row">
-  <div class="col-12">
-		
-			<ul class="list-unstyled list-inline">
+  <div class="row">
+    <div class="col-12">
+		<ul class="list-unstyled list-inline">
                <li class="list-inline-item mx-3"><a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-3x"></i></a>
 		   	</li>
             <li class="list-inline-item mx-3"><a target="_blank" href="https://twitter.com/explore"><i class="fab fa-twitter-square fa-3x"></i></a>
@@ -171,8 +170,8 @@
            <li class="list-inline-item mx-3"><a target="_blank" href="https://www.youtube.com/"><i class="fab fa-youtube-square fa-3x"></i></a>
            </li>             
 		  </ul>
-      <p class="text-md-center">© 2020 Copyright:
-	    	<strong> oliver.nad@gmail.com</strong></p>
+          <p class="text-md-center text-success">© 2020 Copyright:
+	    	<strong class="text-success"> oliver.nad@gmail.com</strong></p>
       </div>
      </div>
   </div>
@@ -182,7 +181,5 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-
-    
   </body>
 </html>

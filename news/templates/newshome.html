@@ -1,56 +1,59 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container">
+<div class="container text-center">
         <div class="row">
             <div class="col">
             <h3 class="text-center text-success">News</h3>
+            {% if request.user.is_superuser %}
+                            <br>
+                            
+                        <a href="{% url 'addnew' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white ">Add News</a>
+                            <br>
+                            <br>
+{% endif %}
             </div>
         </div>
 </div>
 {% endblock %} {% block content %}
 <div class="overlay"></div>
-
-<div class="container-fluid news_container">
-  <div id="#top" class="row">
-         {% for post in object_list %}
-
-                            <div class="col-md-6 text-center">
-                        <h3>{{ post.title }}</h3>
-                                
-                     <p class="text-center font-italic">{{ post.body }}</p>   
-                                <br>
+ <div class="container-fluid news_container">
+    <div id="#top" class="row">
+{% for post in object_list %}
+           <div class="col-md-6 text-center">
+                <h3>{{ post.title }}</h3>
+                        <p class="text-center font-italic">{{ post.body }}</p>    <br>
                             <i class="fas fa-user-edit  fa-2x"></i> {{ post.author }}
                             <br>
                             <br>
                             <i class="fas fa-clock  fa-2x"></i> {{ post.date_added }}
                             <br>
-                            <br>
-                        
-                        {% if request.user.is_superuser %}
-                            <br>
-                            <br>
-                        <a href="{% url 'addnew' %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Add News</a>
-                            <br>
+                            
+                            
+{% if request.user.is_superuser %}
+                           
                             <br>
                         <a href="{% url 'deletenews' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete News</a>
-                        {% endif %}           
+                        
+{% endif %}           
       </div>
-
-
-      <div class="col-md-6 p-4">
-                <img src="{{ post.image.url }}" class="rounded mx-auto d-block w-100">
+      <br>
+<div class="col-md-6 p-4">
+        <img src="{{ post.image.url }}" class="rounded mx-auto d-block w-100">
             </div>
-        {% endfor %}    
+{% endfor %}    
     </div>
 </div>
-<br>
-<br>
 
+<br>
+<br>
 <div class="container text-center">
-<div class="row">
-<div class="col">
+  <div class="row">
+     <div class="col">
 <a  href="#top"><i class="fas fa-arrow-circle-up fa-2x" style="color:green"></i></a>
 </div>
 </div>
 </div>
+
 <br>
+<br>
+
 {% endblock %}
