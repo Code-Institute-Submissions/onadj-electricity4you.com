@@ -12,15 +12,15 @@
 
 ---
 
-- Live Website: https://electricity4you.herokuapp.com/
+ Live Website: https://electricity4you.herokuapp.com/
 
-- GitHub Repo: https://github.com/onadj/electricity4you.com
+ GitHub Repo: https://github.com/onadj/electricity4you.com
 
 ---
 
 # UX
 
-- User stories:
+- -  User stories:
 
 - I want to find out web page with electric vintage chooper and bicycle
 
@@ -52,10 +52,31 @@
 
 ---
 
-# Wireframe
+# Mockup
 
-- Desktop
+ Home Page:
 
+ ![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/homepage.png)
+
+ All Products:
+
+ ![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/allproducts.png)
+
+Choppers:
+
+![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/choppers.png)
+
+Biciycles:
+
+![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/bicycles.png)
+
+News:
+
+![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/news.png)
+
+Blog:
+
+![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/blog.png)
 
 
 # Technologies Used:
