@@ -73,6 +73,7 @@ Electricity4You
 - JavaScript
 - jQuery
 - Google Fonts
+- Adobe Photoshop
 
 ---
 
@@ -103,41 +104,44 @@ Electricity4You
 
 # Deployment:
 
-- The web-site is designed in the Gitpod environment and regularly committed to GitHub after each crucial piece of coding.
-- Using this method as a sanity check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
-
-- To deploy the project to Github the following steps were taken:
+1. The web-site is designed in the Gitpod environment and regularly committed to GitHub after each crucial piece of coding.
+2. Using this method as a sanity check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
+3. To deploy the project to Github the following steps were taken:
 created a master branch in Github repository
 Used Local AWS Cloud9 and Gitpod environment used to build the site
-- Committed files to the staging area using bash terminal commands: git status; git add (specify directory); git commit -m"add message"
-
-- Pushed files to the working environment using git push, which then updates the repository
-
-
-- To deploy the project to Heroku the following steps were taken:
-
-1. created a Heroku account @ https://signup.heroku.com/
-2. Create requirements.txt file in Gitpod workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
-3. To install the Heroku command line on Gitpod, use the following command npm install  heroku
-
-4. Using the New buton, Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod application and Heroku that would allow us to push our changes using Git to update the application at any given time.
-5. To login to Heroku from the CLI, use the command heroku login -i
-6. To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
-7. Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "etc message" git push
-8. Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
-9. To connect an existing repository from Github to Heroku use the following CLI syntax: heroku git:remote -a [followed by name of Heroku app]
-10. To push to Heroku Master Branch, then simply use git push heroku master
-11. To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
-12. In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku.
+4. Committed files to the staging area using bash terminal commands: git status; git add (specify directory); git commit -m"add message"
+5. Pushed files to the working environment using git push, which then updates the repository
+6. To deploy the project to Heroku the following steps were taken:
+7. Created a Heroku account @ https://signup.heroku.com/
+8. Create requirements.txt file in Gitpod workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
+9. To install the Heroku command line on Gitpod, use the following command npm install  heroku
+10. Using the New buton, Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod application and Heroku that would allow us to push our changes using Git to update the application at any given time.
+11. To login to Heroku from the CLI, use the command heroku login -i
+12. To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
+13. Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "etc message" git push
+14. Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
+15. To connect an existing repository from Github to Heroku use the following CLI syntax: heroku git:remote -a [followed by name of Heroku app]
+16. To push to Heroku Master Branch, then simply use git push heroku master
+17. To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
+18. In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku.
  To do this go to Settings tab > Config Variables and input: AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY; DATABASE_URL; DISABLE_COLLECTSTATIC; EMAIL_ADDRESS; EMAIL_PASSWORD EMAIL_PASSWORD; SECRET_KEY; STRIPE_PUBLISHABLE; STRIPE_SECRET.
+19. The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+20. The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
+21. Once the build in Heroku is complete, click the Open app button.
+22. Created AWS account for storing static and media files
+23. Connected Django with S3
+24. Made functionality for sending real mail from gmail
+25. Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser credentials
 
-13. The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+---
 
-14. The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
+# Features Left to Implement:
 
-15. Once the build in Heroku is complete, click the Open app button.
-
-16. Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser credentials.
+- Make members club - started but not finished
+- Make functionality that owner of page can change delivery time and put that on separate section on website - started but not finished
+- Make functionality that customers who buyed product can send rating of purchased product
+- Add more products
+- Make own logo of page
 
 ---
 
