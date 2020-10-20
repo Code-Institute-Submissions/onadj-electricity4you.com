@@ -6,7 +6,7 @@
 
 ---
 
-- The transition of electric vehicles is no longer unknown. We are witnessing that in the world in the field of the automotive industry, the production of electric vehicles is growing day by day. At the same time, the same new vehicles have a new more modern design. Here we ask ourselves what happens to vintage vehicles? This site is intended for people who have grown up and live today with timeless design, something that new vehicles will never have and that is the soul.
+The transition of electric vehicles is no longer unknown. We are witnessing that in the world in the field of the automotive industry, the production of electric vehicles is growing day by day. At the same time, the same new vehicles have a new more modern design. Here we ask ourselves what happens to vintage vehicles? This site is intended for people who have grown up and live today with timeless design, something that new vehicles will never have and that is the soul.
 This webshop is planned to be released into live production by the end of 2020 by when the new company will be open.
 Images of products and prices currently on the page in live production will not be present, they are here only for the presentation of the website.
 
@@ -22,7 +22,7 @@ Images of products and prices currently on the page in live production will not 
 
 # UX
 
-- -  User stories:
+ User stories:
 
 - I want to find out web page with electric vintage chooper and bicycle
 
@@ -100,7 +100,6 @@ Images of products and prices currently on the page in live production will not 
 - PostgreSQL 
 - Django
 - AWS S3 - Amazon Simple Storage Service (Amazon S3)
-- Balsamiq
 - Python
 - Stripe
 - FontAwesome
@@ -111,7 +110,7 @@ Images of products and prices currently on the page in live production will not 
 # Deployment:
 
 1. The web-site is designed in the Gitpod environment and regularly committed to GitHub after each crucial piece of coding.
-2. Using this method as a sanity check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
+2. Using this method as a  check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
 3. To deploy the project to Github the following steps were taken:
 created a master branch in Github repository
 Used Gitpod environment to build the site
@@ -123,7 +122,7 @@ Used Gitpod environment to build the site
 9. To install the Heroku command line on Gitpod, use the following command npm install  heroku
 10. Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod/GitHub repo application and Heroku that would allow us to push our changes using Git to update the application at any given time.
 11. To login to Heroku from the CLI, use the command heroku login -i
-12. To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
+12. To get the application up and running a Procfile is required to give instruction Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
 13. Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "etc message" git push, somethimes I need to login in  heroku with heroku login -i and push to heroku with  git push heroku master
 14. Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
 15. To push to Heroku Master Branch, then simply use git push heroku master
@@ -145,7 +144,6 @@ Used Gitpod environment to build the site
 - https://validator.w3.org/ (spotted few main errors and fixed)
 - http://jigsaw.w3.org/css-validator/ (spotted few main errors and fixed, left warning about bootstrap)
 - I was testing the site with Chrome developer tools on my desktop PC, and with Samsung Galaxy A50, Samsung Galaxy Tab A6, iPhone 7 and with Firefox to make sure compatibility and responsiveness are working
-
 - When testing this app, to make a payment, the following details should be used:
 Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date, ZIP Code: any five numbers.
 
@@ -186,6 +184,8 @@ Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date,
 - https://www.udemy.com/
 
 - https://www.freecodecamp.org/
+
+- Code Institute Slack
 
 
 --- 
