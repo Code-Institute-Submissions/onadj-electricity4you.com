@@ -26,7 +26,7 @@ Electricity4You
 
 - I want to see on the page not only products with prices, I want to see live Blog with customers Posts and possibility to make my own Posts, I want to see how many likes has a specific Post, and I want too see Posts only from registered visitors or customers with date of Post made
 
-- I want to edit or delete my Post
+- I want to edit or delete my Post or like someone else’s post
 
 - I want to find on page latest News from site owner about upcoming vehicles and promotions
 
