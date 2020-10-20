@@ -9,10 +9,8 @@ Electricity4You
 - The transition of electric vehicles is no longer unknown. We are witnessing that in the world in the field of the automotive industry, the production of electric vehicles is growing day by day. At the same time, the same new vehicles have a new more modern design. Here we ask ourselves what happens to vintage vehicles? This site is intended for people who have grown up and live today with timeless design, something that new vehicles will never have and that is the soul.
 
 
-https://github.com/onadj/electrycity4you/blob/master/media/jumbotron.jpg
+![Alt Text](https://github.com/onadj/electricity4you/blob/master/media/jumbotron.jpg)
 
-
-https://github.com/onadj/drones_review/blob/master/static/wireframe/AddDroneReviewMobile.png
 ---
 
 - Live Website: https://electricity4you.herokuapp.com/
