@@ -7,6 +7,8 @@
 ---
 
 - The transition of electric vehicles is no longer unknown. We are witnessing that in the world in the field of the automotive industry, the production of electric vehicles is growing day by day. At the same time, the same new vehicles have a new more modern design. Here we ask ourselves what happens to vintage vehicles? This site is intended for people who have grown up and live today with timeless design, something that new vehicles will never have and that is the soul.
+This webshop is planned to be released into live production by the end of 2020 by when the new company will be open.
+Images of products and prices currently on the page in live production will not be present, they are here only for the presentation of the website.
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/media/jumbotron.jpg)
 
@@ -138,15 +140,55 @@ Used Gitpod environment to build the site
 
 ---
 
+# Testing:
+
+- https://validator.w3.org/ (spotted few main errors and fixed)
+- http://jigsaw.w3.org/css-validator/ (spotted few main errors and fixed, left warning about bootstrap)
+- I was testing the site with Chrome developer tools on my desktop PC, and with Samsung Galaxy A50, Samsung Galaxy Tab A6, iPhone 7 and with Firefox to make sure compatibility and responsiveness are working
+
+- When testing this app, to make a payment, the following details should be used:
+Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date, ZIP Code: any five numbers.
+
+---
+
 # Features Left to Implement:
 
 - Make members club - started but not finished
-- Make functionality that owner of page can change delivery time and put that on separate section on website - started but not finished
+- Make functionality that owner of page can change delivery time/shipping and put that on separate section on website - started but not finished
 - Make functionality that customers who buyed product can send rating of purchased product
 - Add more products
 - Make own logo of page
 
 ---
+
+# Media and Information
+
+- All images for this project were obtained from Google Images
+
+---
+
+# Code 
+
+- https://stackoverflow.com/
+
+- https://codepen.io/
+
+- https://www.w3schools.com/
+
+- https://www.youtube.com/
+
+- https://docs.djangoproject.com/en/3.1/
+
+- https://developedbyed.com/
+
+- https://codemy.com/
+
+- https://www.udemy.com/
+
+- https://www.freecodecamp.org/
+
+
+--- 
 
 # Special Thanks:
 
