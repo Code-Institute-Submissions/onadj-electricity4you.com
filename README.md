@@ -154,6 +154,7 @@ Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date,
 - Make members club - started but not finished
 - Make functionality that owner of page can change delivery time/shipping and put that on separate section on website - started but not finished
 - Make functionality that customers who buyed product can send rating of purchased product
+- Make Blog only for owners of site, for faster communication in company,started as newblog but didn't finished
 - Add more products
 - Make own logo of page
 
