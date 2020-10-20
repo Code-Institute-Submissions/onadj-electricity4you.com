@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block page_header %}
 {% endblock %} {% block content %}
 {% if user.is_authenticated %}
-
 <div class="overlay"></div>
 <div class="container">
   <div class="row">
@@ -16,15 +15,12 @@
       </div>
     </div>
   </div>
-
   <script>
         var name = "{{ user.id }}";
-        document.getElementById("elder").value = name;
+        document.getElementById("onagy").value = name;
   </script>
   {% else %}
-
   <h4>You need to be logged in to post something</h4>
-  
   {% endif %}
   {% endblock %}
 </div>

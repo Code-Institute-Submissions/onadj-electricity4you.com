@@ -22,16 +22,18 @@
                         <p class="text-center font-italic">{{ post.body }}</p>    <br>
     <img src="{{ post.image.url }}" class="rounded mx-auto d-block w-100">
                           <br>
-    <i class="fas fa-user-edit  fa-2x"></i> {{ post.author }}
+    <i class="fas fa-user-edit"></i> {{ post.author }}
 <br>
 <br>
-    <i class="fas fa-clock  fa-2x"></i> {{ post.date_added }}
+    <i class="fas fa-clock"></i> {{ post.date_added }}
 <br>
 {% if request.user.is_superuser %}
 <br>
 <a href="{% url 'deletenews' post.pk %}" class="btn btn-sm font-weight-bold rounded-0 btn-outline-light text-white">Delete News</a>                      
 {% endif %} 
-{% endfor %}    
+{% endfor %}
+<br>
+   
       </div>
      </div>
 </div>

@@ -348,11 +348,6 @@ i {
     background-color: white;
 }
 
-.blog-button {
-    background: white;
-    color:black;
-    min-width: 100px;
-}
 
 .blog_container{
     background:url('/media/blogbackground.jpg') no-repeat center center fixed;
