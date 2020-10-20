@@ -192,7 +192,7 @@ Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date,
 
 # Special Thanks:
 
-- I would like to thank the Code Institute for its excellent support over the past year. I especially want to thank all the members of the Code Institute Tutors Support who had great patience and kindness in my every question.
+- I would like to thank the Code Institute for its excellent support over the past year. I especially want to thank all the members of the Code Institute Tutors Support who had great patience,helpfulness and kindness in my every question.
 
 
 
