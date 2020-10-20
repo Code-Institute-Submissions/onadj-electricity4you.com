@@ -42,7 +42,9 @@
 
 - Create a web application that allows users to have live Blog and live News about upcoming vehicles and promotions
 
-- Create a transparent webshop where customers come first, where website visitors can read experiences, questions and reviews from customers and potential customers in a transparent way
+- Create a transparent webshop where customers come first, where website visitors can read experiences, questions and reviews from customers and potential customers in a transparent way in Blog section
+
+- I want to track Blog visitors (potentional new customers), use it as a sales improvement
 
 ---
 
@@ -56,27 +58,27 @@
 
  Home Page:
 
- ![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/homepage.png)
+ ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/homepage.png)
 
  All Products:
 
- ![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/allproducts.png)
+ ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/allproducts.png)
 
 Choppers:
 
-![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/choppers.png)
+![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/choppers.png)
 
 Biciycles:
 
-![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/bicycles.png)
+![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/bicycles.png)
 
 News:
 
-![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/news.png)
+![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/news.png)
 
 Blog:
 
-![alt text](https://github.com/onadj/electricity4you.com/blob/mockups/blog.png)
+![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/blog.png)
 
 
 # Technologies Used:
