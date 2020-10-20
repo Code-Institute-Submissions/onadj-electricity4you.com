@@ -56,30 +56,31 @@
 
 # Mockup
 
- Home Page:
+ ### Home Page:
 
  ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/homepage.png)
 
- All Products:
+ ### All Products:
 
  ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/allproducts.png)
 
-Choppers:
+### Choppers:
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/choppers.png)
 
-Biciycles:
+### Biciycles:
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/bicycles.png)
 
-News:
+### News:
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/news.png)
 
-Blog:
+### Blog:
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/blog.png)
 
+---
 
 # Technologies Used:
 
@@ -102,6 +103,8 @@ Blog:
 - Stripe
 - FontAwesome
 - Boto3
+
+---
 
 # Deployment:
 
