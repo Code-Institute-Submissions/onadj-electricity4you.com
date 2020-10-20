@@ -1,39 +1,156 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Code Institute Milestone Project 4 - Full Stack Frameworks with Django
 
-Welcome onadj,
+---
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+Electricity4You
 
-## Gitpod Reminders
+---
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- The transition of electric vehicles is no longer unknown. We are witnessing that in the world in the field of the automotive industry, the production of electric vehicles is growing day by day. At the same time, the same new vehicles have a new more modern design. Here we ask ourselves what happens to vintage vehicles? This site is intended for people who have grown up and live today with timeless design, something that new vehicles will never have and that is the soul.
 
-`python3 -m http.server`
+---
 
-A blue button should appear to click: *Make Public*,
+- Live Website: https://electricity4you.herokuapp.com/
 
-Another blue button should appear to click: *Open Browser*.
+- GitHub Repo: https://github.com/onadj/electricity4you.com
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+---
 
-A blue button should appear to click: *Make Public*,
+# UX
 
-Another blue button should appear to click: *Open Browser*.
+- User stories:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+- I want to find out web page with electric vintage chooper and bicycle
 
-## Updates Since The Instructional Video
+- I want to buy vintage electric chooper or bicycle, but from website which has transparent communication in the form of a Blog
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+- I want to see on the page not only products with prices, I want to see live Blog with customers Posts and possibility to make my own Posts, I want to see how many likes has a specific Post, and I want too see Posts only from registered visitors or customers with date of Post made
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- I want to edit or delete my Post
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- I want to find on page latest News from site owner about upcoming vehicles and promotions
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+---
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+# Owner site goal
 
---------
+- Build a webshop that sells vintage electric choppers and bicycles
 
-Happy coding!
+- Site owner's goal: Earn money on each product purchased from page
+
+- Create a web application that allows users to have live Blog and live News about upcoming vehicles and promotions
+
+- Create a transparent webshop where customers come first, where website visitors can read experiences, questions and reviews from customers and potential customers in a transparent way
+
+---
+
+# Structure
+
+- Minimalistic design with black background, green and white color.
+
+---
+
+# Technologies Used:
+
+- The languages, frameworks, libraries and other tools utilised for building this web-app are:
+
+- Gitpod - Gitpod is a cloud-based integrated development environment (IDE) that has been used to write, run, and debug the code used for the web-app.
+- GitHub - GitHub has been used for version control of the code by using Git functions in the control panel. Github was utilised frequently during the development of the web-app.
+- Heroku - This is a cloud based application platform that allows deployment of an application to the web and connection to the database.
+- SQlite3 - SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world.
+- PostgreSQL - PostgreSQL is a powerful, open source object-relational database system.
+- Django 3.1.1 - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+- AWS S3 - Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance
+- Balsamiq - fUsed for design of ireframes.
+
+---
+
+# Front-End Technologies:
+
+- HTML 5
+- CSS3
+- Bootstrap 4.5.2
+- JavaScript
+- jQuery
+- Google Fonts
+
+---
+
+# Back-End Technologies:
+
+- asgiref==3.2.10
+- boto3==1.15.18
+- botocore==1.18.18
+- dj-database-url==0.5.0
+- Django==3.1.1
+- django-allauth==0.42.0
+- django-countries==6.1.3
+- django-crispy-forms==1.9.2
+- django-storages==1.10.1
+- gunicorn==20.0.4
+- jmespath==0.10.0
+- oauthlib==3.1.0
+- Pillow==7.2.0
+- psycopg2-binary==2.8.6
+- python3-openid==3.2.0
+- pytz==2020.1
+- requests-oauthlib==1.3.0
+- s3transfer==0.3.3
+- sqlparse==0.3.1
+- stripe==2.51.0
+
+---
+
+# Deployment:
+
+- The web-site is designed in the Gitpod environment and regularly committed to GitHub after each crucial piece of coding.
+- Using this method as a sanity check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
+
+- To deploy the project to Github the following steps were taken:
+created a master branch in Github repository
+Used Local AWS Cloud9 and Gitpod environment used to build the site
+- Committed files to the staging area using bash terminal commands: git status; git add (specify directory); git commit -m"add message"
+
+- Pushed files to the working environment using git push, which then updates the repository
+
+
+- To deploy the project to Heroku the following steps were taken:
+
+1. created a Heroku account @ https://signup.heroku.com/
+2. Create requirements.txt file in Gitpod workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
+3. To install the Heroku command line on Gitpod, use the following command npm install  heroku
+
+4. Using the New buton, Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod application and Heroku that would allow us to push our changes using Git to update the application at any given time.
+5. To login to Heroku from the CLI, use the command heroku login -i
+6. To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
+7. Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "etc message" git push
+8. Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
+9. To connect an existing repository from Github to Heroku use the following CLI syntax: heroku git:remote -a [followed by name of Heroku app]
+10. To push to Heroku Master Branch, then simply use git push heroku master
+11. To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
+12. In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku.
+ To do this go to Settings tab > Config Variables and input: AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY; DATABASE_URL; DISABLE_COLLECTSTATIC; EMAIL_ADDRESS; EMAIL_PASSWORD EMAIL_PASSWORD; SECRET_KEY; STRIPE_PUBLISHABLE; STRIPE_SECRET.
+
+13. The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+14. The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
+
+15. Once the build in Heroku is complete, click the Open app button.
+
+16. Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser credentials.
+
+---
+
+# Special Thanks:
+
+- I would like to thank the Code Institute for its excellent support over the past year. I especially want to thank all the members of the Code Institute Tutors Support who had great patience and kindness in my every question.
+
+
+
+
+
+
+
+
+
+
