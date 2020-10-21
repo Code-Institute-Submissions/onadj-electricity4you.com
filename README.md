@@ -70,7 +70,7 @@ Images of products and prices currently on the page in live production will not 
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/choppers.png)
 
-### Biciycles:
+### Bicycles:
 
 ![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/bicycles.png)
 
@@ -134,7 +134,7 @@ Used Gitpod environment to build the site
 20. Once the build in Heroku is complete, click the Open app button.
 21. Created AWS account for storing static and media files
 22. Connected Django with S3
-23. Made functionality for sending real mail from gmail
+23. Made functionality for sending real mail
 24. Objects can then be added to the new database using the Admin Panel  (Product and Site Management) and logging in with your superuser credentials
 
 ---
