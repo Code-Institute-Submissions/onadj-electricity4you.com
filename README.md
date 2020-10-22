@@ -109,34 +109,130 @@ Images of products and prices currently on the page in live production will not 
 
 # Deployment:
 
-1. The web-site is designed in the Gitpod environment and regularly committed to GitHub after each crucial piece of coding.
-2. Using this method as a  check for the development enabled me to restore the site back to previous stages when it functioned correctly or easily find lost pieces of code.
-3. To deploy the project to Github the following steps were taken:
-created a master branch in Github repository
-Used Gitpod environment to build the site
-4. Committed files to the staging area using bash terminal commands: git add . ;  git commit -m "add message" and git push
-5. Pushed files to the working environment using git push, which then updates the repository
-6. To deploy the project to Heroku the following steps were taken:
-7. Created a Heroku account
-8. Create requirements.txt file in Gitpod workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
-9. To install the Heroku command line on Gitpod, use the following command npm install  heroku
-10. Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod/GitHub repo application and Heroku that would allow us to push our changes using Git to update the application at any given time.
-11. To login to Heroku from the CLI, use the command heroku login -i
-12. To get the application up and running a Procfile is required to give instruction Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
-13. Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "etc message" git push, somethimes I need to login in  heroku with heroku login -i and push to heroku with  git push heroku master
-14. Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
-15. To push to Heroku Master Branch, then simply use git push heroku master
-16. To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
-17. In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku.
- To do this go to Settings tab > Config Variables and input: AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY; DATABASE_URL; DISABLE_COLLECTSTATIC; EMAIL_ADDRESS; EMAIL_PASSWORD EMAIL_PASSWORD; SECRET_KEY; STRIPE_PUBLISHABLE; STRIPE_SECRET.
-18. The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-19. The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
-20. Once the build in Heroku is complete, click the Open app button.
-21. Created AWS account for storing static and media files
-22. Connected Django with S3
-23. Made functionality for sending real mail
-24. Objects can then be added to the new database using the Admin Panel  (Product and Site Management) and logging in with your superuser credentials
-
+- project setup, made new repo in GitHub with name electricity4you
+- pip3 install django
+- django-admin startproject electricity4you
+- touch .gitignore
+- in .gitignore file added *.sqlite3 *.pyc and --pycache
+- python3 manage.py migrate
+- python3 manage.py createsuperuser
+- git add ; . git commit -m "initial commit" ; git push
+- pip3 install django-allauth
+- in setting of app added django-allauth documentation
+- python3 manage.py migrate
+- python3 manage.py runserver  ; link/admin got access to django administration
+- verify superuser
+- pip3 freeze > requirements.txt
+- mkdir templates/allauth
+- cp -r ../.p-modules/lib/python3.8/site-packages/allauth/templates/*
+- added bootstrap documentation / startertemplate
+- pyhon3 manage.py startapp home
+- mkdir -p home/templates/home
+-  in home folder made index.html
+- made home page and top header
+- mkdir templates/includes , in this folder made main-nav.html and mobile-top-header.html
+- python3 manage.py startapp products
+- mkdir products/fixtures added two json files in fixtures folder
+- python3 manage.py makemigrations
+- python3 manage.py migrate
+- mkdir -p products/templates/products here added needed html files
+- connected products html files with main navbar
+- in mobile-top-header.html/main-nav.html added needed code to make search functionality, sorting by price, category, rating and added javascript for for sorting
+  products from A-Z and low to high price
+- python3 manage.py startapp bag
+- added templates folder with html files
+- connected with mobile-top-header.html
+- made new file in bag folder context.py for bag context and delivery logic
+- in products folder added functionality for select size of clothes
+- added jquery code uncomppressed minified for removing products from bag
+- added 4 toast html files(success, error, info and warning)
+- python3 manage.py startapp checkout and as allways added code to models.py
+- python3 manage.py makemigrations
+- python3 manage.py migrate
+- added admin, signals and forms - built in feature of django
+- in checkout folder made own static file
+- python3 install pillow
+- python install django-crispy-forms
+- made account for stripe
+- added code form stripe documentation in base.html
+- in checkout views.py added stripe-public-key
+- in checkout folder made new folder JS and made file stripe-elements.js in this file added code from stripe documentation
+- added css code from stripe documentation in checkout.css
+- pip3 install stripe
+- in settings added STRIPE CURRENCY
+- in terminal => export STRIPE_SECRET_KEY and STRIPE_PUBLIC_KEY, in gitpod in enviroment variables added STRIPE_SECRET_KEY and STRIPE_PUBLIC_KEY
+  so no need to repeat the entry in terminal
+- from stripe documentation took client,js code and added in stripe_elements.js
+- in checkout templates folderu all html files customized to work properly
+- in checkbox folder made webhook_handler.py
+- in checkbox folder made webhook.py here added code from stripe documentation
+- in settings.py off our app added STRIPE_WH...
+- tested on the stripe website stripe/developers/webhooks/added endpoint in our link at the end added /checkout/wh clicked receive all events test ok
+- took signing secret key from stripe website and added in terminal as export STRIPE_WH_SECRET=""
+- again testing on stripe website with send test webhook 
+- part with stripe is finished - completed webhook handler added checkout form, data caching in payment intent
+- pip3 install django-countries
+- pip3 freeze > requirements.txt
+- made / templates / allauth html files to work properly
+- testing confirmation mail for login, for now confirmation mail is in terminal
+- updated profile and product form to work required(added product admin functionality for adding, editing, deleting products)
+- added widget django forms for fixing the image field - in product folder added widget.py and in templates made custom_clearable_file_input.html
+- made new acc on heroku
+- on heroku new app/ name of app: electricity4you/resources/add-ons/chosing heroku postgres/hobby dev-free
+- pip3 install dj-database_url
+- pip3 install psycopg2-binary
+- pip3 freeze > requirements.tx
+- in settings.py added DATABASES: ...
+- heroku/settings/config vars added postgrees://
+- python3 manage.py migrate
+- python3 manage.py loaddata categories
+- python3 manage.py loaddata products
+- pip3 install gunicorn
+- pip3 freeze > requirements.txt
+- made Procfile
+- in heroku config set DISABLE_COLLECTSTATIC = 1 --app electricity4you
+- conected heroku with github repo
+- added django secret key generator in heroku config vars 
+- created aws account for static files and media
+- aws.amazon.com
+- personal type/S3/create bucket
+- name of bucket is name electricity4you
+- block all public access/bucket properties/static webhosting/use this bucket to host/index and error.html
+- permission/cors configuration
+- bucket policy/policy generator/S3 Bucket policy/principal added */ and copied ARN
+- added code in Bucket policy tab
+- on the end of my app added /*
+- access control list/public access/ chose everyone and clicked on ACCESS CONTROL
+- created AWS GROUPS, PoliciEs AND users :
+- Services took IAM, took Groups
+- made group name: manage-electricity4you/next/next/create group
+- took policies/JSON tab/import managed policy
+- AmazonS3FullAcces/import
+- AmazonS3, choose my bucket/permission.from bucket policy copied ARN in create policy/JSON
+- review policy/ groups/permission/attach policy
+- add user/ added onagy-electricity4you-staticfiles-user
+- access type choose pragrammatic access/permission/ choose only manage-electricity4you
+- Tags/next/create user
+- download .csv/Access key ID Secret acces key
+- pip3 install boto3
+- pip3 install django-storages
+- pip3 freeze > requirements.txt
+- in settings.py added USE_AWS
+- git push heroku master on Amazon S3 created static folder
+- settings.py added #cache control
+- in AWS S3 created folder media/uploaded images from my pc
+- manage public permission GRANT PUBLIC READ ACCESS TO THIS OBJECT and upload
+- copied token from stripe and added endpoint; https://electricity4you.herokuapp.com/checkout/wh
+- sending mail with django:
+- used gmail/settings/accounts and import/other settings/security/2 step verification/get started/app passwords/mail/django/generate
+- 16 key password added in heroku config vars
+- on the end fixed css, font and other
+- for the requirements of Code Institute made two more models
+- models is in news app and blog app
+- for every installed app, name of app is added in settings, new url, path, templates, views and models are made
+- final look heroku Config Vars :
+![alt text](https://github.com/onadj/electricity4you.com/blob/master/mockups/herokuconfigvars.png)
+ 
 ---
 
 # Testing:
