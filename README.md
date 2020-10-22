@@ -256,9 +256,10 @@ Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date,
 
 ---
 
-# Media and Information
+# Media, Credit and Information
 
 - All images for this project were obtained from Google Images
+- https://electrek.co/2019/06/24/regent-no-1-retro-electric-motorcycle/
 
 ---
 
@@ -283,6 +284,8 @@ Card number: 4242 4242 4242 4242, CVC: any three numbers, Date: any future date,
 - https://www.freecodecamp.org/
 
 - Code Institute Slack
+
+- Boutique ado Mini project from Code Institute
 
 
 --- 
